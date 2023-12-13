@@ -22,6 +22,50 @@ Feature: Is it Friday yet?
 ---
 
 .Résulats des tests
-image::res_tests.png[Résulats des tests]
+image::res_tests_tp01.png[Résulats des tests TP01]
 
-== TP2...
+== TP2
+
+.Order.java
+[source,java]
+---
+package dojo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+
+    private String owner;
+    private String target;
+    private final List<String> cocktails;
+    private String message;
+
+    public Order() {
+        cocktails = new ArrayList<>();
+    }
+
+    public void declareOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void declareTarget(String target) {
+        this.target = target;
+    }
+
+    public List<String> getCocktails() {
+        return cocktails;
+    }
+
+    public void addMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return "From " + owner + " to " + target + ": " + message;
+    }
+}
+---
+
+.Résulats des tests
+image::res_tests_tp02.png[Résulats des tests TP02]
