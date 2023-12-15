@@ -69,3 +69,44 @@ public class Order {
 
 .Résulats des tests
 image::res_tests_tp02.png[Résulats des tests TP02]
+
+== TP3
+
+.pwNumber.feature
+[source,guerkin]
+----
+Feature: Vérifier qu'un compte rendu de TP contienne le bon numéro de TP de la semaine
+
+Scenario: Le numéro de TP de la semaine, devrait être mentionné dans le compte rendu
+    Given un numéro de TP de la semaine
+    And un compte rendu de TP
+    Then le numéro de TP devrait se trouvé dans le compte rendu
+----
+
+.pwNumberStepsDefinition.py
+[source,python]
+----
+from behave import *
+import os
+
+
+@given('un numéro de TP de la semaine')
+def step_impl(context):
+    context.number = "07"
+
+
+@given('un compte rendu de TP')
+def step_impl(context):
+    context.practical_work = "TP07 - Prog++ - Rémy Guibert G2.pdf"
+
+
+@then('le numéro de TP devrait se trouvé dans le compte rendu')
+def step_impl(context):
+    print("Recherche de TP" + str(context.number) + " dans le compte rendu : " + context.practical_work)
+    assert os.system("pdfgrep TP" + str(context.number) + " \"" + context.practical_work + "\"") == 0
+----
+
+L'objectif est de savoir si on a mis le bon numéro de TP dans notre compte rendu, c'est utile car quand on copie-colle son précédent compte rendu on peut oublié de changer le numéro.
+
+.Résulats des tests
+image::res_tests_tp03.png[Résulats des tests TP03]
