@@ -114,10 +114,7 @@ image::res_tests_tp03.png[Résulats des tests TP03]
 == TP4
 
 .report.txt
-[source,plain]
-----
 include::report.txt[]
-----
 
 .Documentation améliorée (Cucumber)
 image::res_cucumber_tp04.png[Documentation Cucumber TP04]
