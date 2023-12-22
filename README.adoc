@@ -114,7 +114,45 @@ image::res_tests_tp03.png[Résulats des tests TP03]
 == TP4
 
 .report.txt
-include::hellocucumber/report.txt[]
+[source,plain]
+----
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running hellocucumber.RunCucumberTest
+
+Scenario: The example                       # hellocucumber/example.feature:3
+  Given an example scenario                 # hellocucumber.StepDefinitions.anExampleScenario()
+  When all step definitions are implemented # hellocucumber.StepDefinitions.allStepDefinitionsAreImplemented()
+  Then the scenario passes                  # hellocucumber.StepDefinitions.theScenarioPasses()
+
+Scenario Outline: Sunday isn't Friday # hellocucumber/is_it_friday_yet.feature:10
+  Given today is "Friday"             # hellocucumber.StepDefinitions.todayIs(java.lang.String)
+  When I ask whether it's Friday yet  # hellocucumber.StepDefinitions.iAskWhetherItsFridayYet()
+  Then I should be told "TGIF"        # hellocucumber.StepDefinitions.iShouldBeTold(java.lang.String)
+
+Scenario Outline: Sunday isn't Friday # hellocucumber/is_it_friday_yet.feature:11
+  Given today is "Sunday"             # hellocucumber.StepDefinitions.todayIs(java.lang.String)
+  When I ask whether it's Friday yet  # hellocucumber.StepDefinitions.iAskWhetherItsFridayYet()
+  Then I should be told "Nope"        # hellocucumber.StepDefinitions.iShouldBeTold(java.lang.String)
+
+Scenario Outline: Sunday isn't Friday # hellocucumber/is_it_friday_yet.feature:12
+  Given today is "anything else!"     # hellocucumber.StepDefinitions.todayIs(java.lang.String)
+  When I ask whether it's Friday yet  # hellocucumber.StepDefinitions.iAskWhetherItsFridayYet()
+  Then I should be told "Nope"        # hellocucumber.StepDefinitions.iShouldBeTold(java.lang.String)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.886 s -- in hellocucumber.RunCucumberTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.111 s
+[INFO] Finished at: 2023-12-22T13:16:01+01:00
+[INFO] ------------------------------------------------------------------------
+----
 
 .Documentation améliorée (Cucumber)
 image::res_cucumber_tp04.png[Documentation Cucumber TP04]
