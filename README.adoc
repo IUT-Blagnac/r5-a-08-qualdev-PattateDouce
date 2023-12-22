@@ -110,3 +110,17 @@ L'objectif est de savoir si on a mis le bon numéro de TP dans notre compte rend
 
 .Résulats des tests
 image::res_tests_tp03.png[Résulats des tests TP03]
+
+== TP4
+
+.report.txt
+[source,plain]
+----
+include::report.txt[]
+----
+
+.Documentation améliorée (Cucumber)
+image::res_cucumber_tp04.png[Documentation Cucumber TP04]
+
+.Documentation améliorée (Cukedoctor)
+image::res_cukedoctor_tp04.png[Documentation Cukedoctor TP04]
